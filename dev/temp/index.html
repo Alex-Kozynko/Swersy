@@ -114,7 +114,7 @@
                     <p><b>Остались вопросы?</b> Наш менеджер в Telegram
                         всегда проконсультирует и ответит на запросы</p>
                     <img src="img/main/arrow_next.png" alt="arrow" />
-                    <button class="button">Связаться с поддержкой</button>
+                    <a href="https://t.me/swersy" target="_blank" class="button">Связаться с поддержкой</a>
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@
                             истории.
                         </p>
                         <div class="bot_item">
-                            <button class="button">Заказать видео</button>
+                            <button class="button video">Заказать видео</button>
                             <span class="price">400$</span>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                             шоу Голос Дети и Голос страны
                         </p>
                         <div class="bot_item">
-                            <button class="button">Заказать видео</button>
+                            <button class="button video">Заказать видео</button>
                             <span class="price">150$</span>
                         </div>
                     </div>
@@ -193,5 +193,24 @@
     </main>
     //= include/footer.html
     <script src="js/libs.min.js"></script>
+    <script type="text/javascript">
+        function headerPOsition() {
+            if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                if ($(window).width() < 1365) {
+                    currentScrollTop = $("html").scrollTop();
+                    if (tempScrollTop < currentScrollTop)
+                        $('#footer .footer_top').addClass('iphone');
+                    else if (tempScrollTop > currentScrollTop)
+                        $('#footer .footer_top').removeClass('iphone');
+                    tempScrollTop = currentScrollTop;
+                }
+            }
+        }
+        let tempScrollTop = 0,
+            currentScrollTop = 0;
+        $(window).on('scroll', () => {
+            headerPOsition();
+        });
+    </script>
 </body>
 </html>

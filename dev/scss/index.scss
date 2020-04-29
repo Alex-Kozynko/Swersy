@@ -446,11 +446,11 @@
         margin-bottom: $m5;
     }
     .button {
-        padding: $m10 $m20;
+        padding: $m10 $m20 !important;
         font-size: $m12;
         width: auto;
         height: auto;
-        line-height: inherit;
+        line-height: inherit !important;
     }
     .logo {
         .logo_bg {
@@ -482,8 +482,26 @@
             .header_top {
                 border-bottom: 1px solid rgba(255,255,255,.1);
                 padding: $m2 0;
+                .logo {
+                    order: 1;
+                    width: 40%;
+                    padding-bottom: $m5;
+                    .logo_bg {
+                        min-width: $m50;
+                        height: $m50;
+                    }
+                }
                 .buttons {
-                    display: none;
+                    order: 2;
+                    width: 60%;
+                    flex-flow: row wrap;
+                    padding: $m5 0;
+                }
+                .button {
+                    font-size: $m10;
+                    width: 100%;
+                    margin-bottom: $m5;
+                    margin-left: 0 !important;
                 }
             }
             .header_nav {
@@ -685,6 +703,11 @@
             background: #181719;
             width: 100%;
             z-index: 100;
+            transition: all 0.5s;
+            &.iphone {
+                height: $m55;
+                padding-bottom: $m20;
+            }
             .container {
                 width: 100% !important;
                 height: 100%;
