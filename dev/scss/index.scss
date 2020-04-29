@@ -444,11 +444,11 @@
         margin-bottom: $m5;
     }
     .button {
-        padding: $m10 $m20;
+        padding: $m10 $m20 !important;
         font-size: $m12;
         width: auto;
         height: auto;
-        line-height: inherit;
+        line-height: inherit !important;
     }
     .logo {
         .logo_bg {

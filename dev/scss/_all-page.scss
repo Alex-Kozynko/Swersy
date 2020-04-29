@@ -18,7 +18,6 @@ $osn-col: #f9ab02;
 ::-webkit-scrollbar-thumb:window-inactive {
   background: $osn-col;
 }
-
 input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: transparent;
 }
@@ -77,6 +76,60 @@ a {
   font-size: $a26;
   line-height : $a32;
 
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="number"], .select {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(195, 195, 195);
+    border-radius: $a8;
+    background-color: rgb(236, 236, 236);
+    width: 100%;
+    height: $a84;
+  margin-bottom : $a40;
+    padding: 0 $a20;
+}
+
+.page_wrapper {
+  width : 100%;
+  margin-bottom : $a40;
+  position : relative;
+  .select {
+    margin-bottom : 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size : $a20;
+    line-height : $a24;
+    color: rgb(148, 148, 148);
+  }
+  .arrow_down {
+    top : 40%;
+    position: absolute;
+    content: "";
+    border-left: $a8 solid transparent;
+    border-right: $a8 solid transparent;
+    border-top: $a12 solid #f4a803;
+    width: 0;
+    height: 0;
+    right : $a20;
+  }
+}
+
+textarea {
+  padding     : $a20  ;
+  resize      : none;
+  height      : $a200;
+  white-space : pre-line;
+  line-height : $a24;
+  font-size   : $a20;
+
+
+}
+::-webkit-input-placeholder {
+  color: rgb(148, 148, 148);
+  font-size : $a18;
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -331,7 +384,99 @@ body {
   height     : $a6;
 }
 
+.title {
+  font-size : $a24;
+  line-height : $a24;
+  font-family: 'GilroyExtraBold';
+  margin-bottom : $a10;
+  width : 100%;
+}
+
+.wrap_container, .wrap_container1 {
+  width : 100%;
+  .popup_form, .popup_form1 {
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    height : 100%;
+    width : 100%;
+    top : 0;
+    left : 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content : center;
+    z-index : 1000;
+    overflow: auto;
+    .form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: $a40 $a45;
+      border-radius: $a8;
+      background-color: rgb(255, 255, 255);
+      width: $a518;
+      height: auto;
+      .close {
+        position: absolute;
+        top : $a20;
+        right : $a20;
+        background: none;
+        border: none;
+        cursor: pointer;
+        img {
+          width : $a15;
+        }
+      }
+      .brd_t {
+        margin-bottom : $a20;
+        background    : linear-gradient(161deg, rgb(214, 147, 3) 0%, rgb(254, 174, 2) 100%);
+        width         : $a38;
+        height        : $a6;
+      }
+      h1 {
+        margin-bottom : $a40;
+        font-size : $a44;
+        line-height : $a44;
+        text-transform : uppercase;
+        color: #000;
+      }
+      .descr {
+        font-size : $a18;
+        line-height : $a30;
+        font-family: 'GilroyExtraBold';
+        margin-bottom : $a30;
+      }
+      .wrap {
+        width : 100%;
+        margin-bottom : $a20;
+        label {
+          font-size : $a24;
+          line-height : $a30;
+          margin-right : $a49;
+          font-family: 'GilroyRegular';
+          #check1, #check2 {
+            margin-right : $a12;
+          }
+        }
+      }
+      .button {
+        padding: 0 $a60;
+        margin-bottom : $a10;
+      }
+      .text {
+        font-size : $a14;
+        line-height : $a18;
+        white-space: pre-line;
+        font-family: 'GilroyRegular';
+        text-align: center;
+      }
+    }
+  }
+}
+
+
 #footer {
+  position: relative;
   .footer_top {
     background: #ffaf02;
     .nav {
@@ -492,8 +637,65 @@ h4 {
     text-overflow:ellipsis;
   }
 
-  #footer {
+  input::placeholder, textarea::placeholder {
+    color: transparent;
+  }
 
+  input, select, textarea {
+    height : $m40 !important;
+    padding: 0 $m10 !important;
+    border-radius: $m10 !important;
+  }
+
+  select {
+    font-size : $m12 !important;
+    line-height : $m14 !important;
+  }
+
+  #footer {
+    .wrap_container1, .wrap_container {
+      .popup_form1, .popup_form {
+        .form {
+          width : 90%;
+          .close {
+            top : $m8;
+            right : $m8;
+            img {
+              width : $m10;
+            }
+          }
+          .brd_t {
+            margin-top : $m10;
+            height : $m4;
+            width : 10%;
+          }
+          .wrap {
+            display: flex;
+            label {
+              display: flex;
+              align-items: center;
+              font-size : $m12 !important;
+            }
+          }
+          .page_wrapper {
+            .arrow_down {
+              right : $m10;
+              border-left: $m6 solid transparent;
+              border-right: $m6 solid transparent;
+              border-top: $m10 solid #f4a803;
+
+            }
+          }
+          .button {
+            margin: $m10 0;
+          }
+          .text {
+            font-size : $m12;
+            line-height: $m14;
+          }
+        }
+      }
+    }
   }
 
 }
