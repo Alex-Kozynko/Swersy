@@ -407,6 +407,8 @@
                     box-shadow: 0 $a14 $a46 0 rgba(0, 4, 2, 0.05);
                     background: #fff;
                     width : $a470;
+                    display: flex;
+                    flex-direction: column;
                     align-items: center;
                     .logo {
 
